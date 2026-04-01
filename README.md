@@ -22,3 +22,20 @@ Deployed Splunk Enterprise SIEM on Windows Server 2022 and configured it to inge
 How real SOC teams monitor for brute force attacks and how SIEM tools correlate log data to surface threats automatically.
 
 ---
+### 2. Active Directory Home Lab
+**Tools:** Windows Server 2022, Active Directory Domain Services, Group Policy, PowerShell
+
+**Overview:**
+Deployed and configured Active Directory Domain Services on Windows Server 2022. Built a new forest (lab.local), created and managed user accounts and Organizational Units via both GUI and PowerShell, applied Group Policy password enforcement, created security groups, and configured shared network folders with permission-based access control.
+
+**Key Skills Demonstrated:**
+- Active Directory installation and domain configuration
+- User account and OU management
+- Group Policy Object (GPO) creation and enforcement
+- PowerShell bulk user creation and account management
+- NTFS and share permissions with security groups
+
+**What I Learned:**
+How enterprise environments manage users, permissions, and security policies at scale — the core of what help desk and sysadmin roles deal with daily.
+
+---
