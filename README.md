@@ -73,3 +73,20 @@ Deployed and configured Pi-hole DNS server on a Raspberry Pi 5, blocking ads and
 How DNS works at a practical level and how network-wide filtering can be implemented as a security control on any network.
 
 ---
+### 5. WireGuard VPN Server
+**Tools:** Raspberry Pi 5, WireGuard, Linux CLI, UFW Firewall
+
+**Overview:**
+Self-hosted a WireGuard VPN server on a Raspberry Pi 5 to encrypt home network traffic and practice secure remote access. Managed key generation, peer configuration, and firewall rules in a Linux environment.
+
+**Key Skills Demonstrated:**
+- VPN server deployment and configuration
+- Public/private key cryptography concepts
+- Linux firewall rule management
+- Secure remote access implementation
+- Network traffic encryption
+
+**What I Learned:**
+How VPNs work at a technical level including key exchange, tunneling, and how to secure remote connections — directly relevant to enterprise remote access solutions.
+
+---
