@@ -39,3 +39,20 @@ Deployed and configured Active Directory Domain Services on Windows Server 2022.
 How enterprise environments manage users, permissions, and security policies at scale — the core of what help desk and sysadmin roles deal with daily.
 
 ---
+### 3. Penetration Testing Lab (Kali Linux + Metasploitable 2)
+**Tools:** Kali Linux, Metasploit Framework, Nmap, Wireshark, VirtualBox
+
+**Overview:**
+Built a virtualized attack lab using Kali Linux and Metasploitable 2. Performed full reconnaissance workflow including port scanning, service enumeration, and OS fingerprinting with Nmap. Exploited a known CVE backdoor vulnerability (vsftpd 2.3.4) using Metasploit Framework to achieve a root shell, then extracted password hashes from /etc/shadow for offline cracking. Captured and analyzed network traffic using Wireshark identifying DNS, HTTP, and QUIC protocols.
+
+**Key Skills Demonstrated:**
+- Network reconnaissance and service enumeration
+- Vulnerability identification and exploitation
+- Metasploit Framework operation
+- Packet capture and protocol analysis
+- Post-exploitation techniques
+
+**What I Learned:**
+The full offensive security workflow from recon to exploitation — and how understanding attacks makes you a better defender.
+
+---
