@@ -56,3 +56,20 @@ Built a virtualized attack lab using Kali Linux and Metasploitable 2. Performed 
 The full offensive security workflow from recon to exploitation — and how understanding attacks makes you a better defender.
 
 ---
+### 4. Network-Wide Ad Blocker & DNS Privacy Solution (Pi-hole)
+**Tools:** Raspberry Pi 5, Pi-hole, Linux CLI, DNS/DHCP
+
+**Overview:**
+Deployed and configured Pi-hole DNS server on a Raspberry Pi 5, blocking ads and trackers at the network level for all connected devices. Achieved a 30-70% query block rate across 5-15 active clients. Handled static IP reservation, upstream DNS configuration using Quad9, Wi-Fi interface troubleshooting, and service management via Linux CLI.
+
+**Key Skills Demonstrated:**
+- Linux server deployment and configuration
+- DNS and DHCP fundamentals
+- Network-level security hardening
+- Raspberry Pi administration
+- Service monitoring and management
+
+**What I Learned:**
+How DNS works at a practical level and how network-wide filtering can be implemented as a security control on any network.
+
+---
