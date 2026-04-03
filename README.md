@@ -90,3 +90,18 @@ Self-hosted a WireGuard VPN server on a Raspberry Pi 5 to encrypt home network t
 How VPNs work at a technical level including key exchange, tunneling, and how to secure remote connections — directly relevant to enterprise remote access solutions.
 
 ---
+6. Vulnerability Scanning Lab (OpenVAS/Greenbone)
+Tools: Greenbone Vulnerability Manager (OpenVAS), Kali Linux, Metasploitable 2, VirtualBox
+Overview:
+Deployed Greenbone Vulnerability Manager (GVM) on Kali Linux and configured it to perform a full vulnerability scan against a Metasploitable 2 target in an isolated virtual network. Analyzed scan results by severity, identified critical CVEs, and cross-referenced findings with exploits previously executed manually using Metasploit Framework.
+Key Skills Demonstrated:
+
+Vulnerability scanner deployment and configuration
+Network target setup and host-only adapter configuration
+Full and Fast scan execution against a live target
+CVE identification and CVSS severity triage
+Correlating scanner findings with known exploits (vsftpd 2.3.4, Samba, distcc, UnrealIRCd)
+Report generation and documentation
+
+What I Learned:
+How vulnerability scanners surface attack surface the way a real SOC or pen test team would — and how findings like vsftpd 2.3.4 map directly to exploits I've already executed, completing the full scan → identify → exploit kill chain.
