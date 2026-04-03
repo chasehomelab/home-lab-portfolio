@@ -105,3 +105,33 @@ Report generation and documentation
 
 What I Learned:
 How vulnerability scanners surface attack surface the way a real SOC or pen test team would — and how findings like vsftpd 2.3.4 map directly to exploits I've already executed, completing the full scan → identify → exploit kill chain.
+---
+3. End-to-End Attack & Detection Lab (Capstone)
+Tools: Kali Linux, Metasploit Framework, Metasploitable 2, Greenbone OpenVAS, Splunk Enterprise, Windows Server 2022, VirtualBox
+Overview:
+Built a three-VM home lab simulating a real-world attack and detection scenario. Used OpenVAS to identify critical vulnerabilities on a target system, exploited them using Metasploit, and detected the attack in real time using Splunk SIEM ingesting syslog data from the compromised host.
+Lab Architecture:
+
+Attacker: Kali Linux (192.168.56.105)
+Victim: Metasploitable 2 (192.168.56.103)
+Defender/SOC: Windows Server 2022 + Splunk (192.168.56.104)
+
+Attack Chain:
+
+Ran OpenVAS Full and Fast scan against Metasploitable 2 — identified vsftpd 2.3.4 backdoor (CVSS 10.0 Critical)
+Exploited vsftpd 2.3.4 backdoor using Metasploit Framework, achieving a root shell (uid=0)
+Dumped /etc/passwd confirming full system compromise
+Configured Metasploitable 2 syslog forwarding to Splunk via UDP 514
+Detected attack activity in Splunk showing source host, timestamp, and attack signature
+
+Key Skills Demonstrated:
+
+Vulnerability scanning and CVE triage (OpenVAS/Greenbone)
+Exploitation using Metasploit Framework
+SIEM log ingestion and syslog forwarding configuration
+Real-time attack detection in Splunk
+Network segmentation using host-only adapters across multiple VMs
+Full attack lifecycle: reconnaissance → exploitation → detection → documentation
+
+What I Learned:
+How a SOC analyst sees an attack in progress — from the initial vulnerability scan that surfaces the threat, through active exploitation, to the log events that appear in a SIEM. This lab demonstrates both offensive and defensive perspectives of the same attack, which is the foundation of effective threat detection.
