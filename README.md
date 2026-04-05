@@ -1,115 +1,67 @@
-# Home Lab Portfolio
-### Chase Marshall | Cybersecurity Student | U.S. Air Force Veteran
+Home Lab Portfolio
+Chase Marshall | Cybersecurity Student | U.S. Air Force Veteran
+LACC Cybersecurity A.S. (GPA 3.7) | CompTIA Security+ Candidate | Targeting SOC Analyst / IT Support Roles
 
----
+Projects
+1. Active Directory Lab
+Tools: Windows Server 2022, Active Directory Domain Services, Group Policy, PowerShell, DNS, DHCP
+Overview:
+Deployed and configured Active Directory Domain Services on Windows Server 2022. Built a new forest (lab.local), managed user accounts and OUs via GUI and PowerShell, enforced Group Policy password and lockout policies, configured DNS records and DHCP scopes, mapped network drives via command line, and performed remote desktop support sessions.
+Key Skills Demonstrated:
 
-## Projects
+Active Directory installation and domain configuration
+Full user lifecycle management — provisioning, password resets, offboarding
+Group Policy hardening (password complexity: 12 chars, account lockout: 5 attempts)
+PowerShell AD automation — New-ADUser, Set-ADAccountPassword, Search-ADAccount
+DNS A record creation and nslookup verification
+DHCP scope configuration and static reservations
+Network drive mapping via net use command
+Windows Event Viewer security log analysis (Event ID 4624/4625)
+Remote Desktop Protocol (RDP) support simulation
 
-### 1. SIEM Monitoring Lab (Splunk Enterprise)
-**Tools:** Splunk Enterprise, Windows Server 2022, SPL
-
-**Overview:**
-Deployed Splunk Enterprise SIEM on Windows Server 2022 and configured it to ingest Windows Security event logs. Built a dashboard to visualize failed login attempts and wrote an automated alert to detect brute force attacks when an account exceeds 3 failed logins within a short window.
-
-**Key Skills Demonstrated:**
-- SIEM deployment and configuration
-- Windows event log ingestion and parsing
-- SPL (Search Processing Language) query writing
-- Automated threat detection and alerting
-- Security dashboard creation
-
-**What I Learned:**
-How real SOC teams monitor for brute force attacks and how SIEM tools correlate log data to surface threats automatically.
-
----
-### 2. Active Directory Home Lab
-**Tools:** Windows Server 2022, Active Directory Domain Services, Group Policy, PowerShell
-
-**Overview:**
-Deployed and configured Active Directory Domain Services on Windows Server 2022. Built a new forest (lab.local), created and managed user accounts and Organizational Units via both GUI and PowerShell, applied Group Policy password enforcement, created security groups, and configured shared network folders with permission-based access control.
-
-**Key Skills Demonstrated:**
-- Active Directory installation and domain configuration
-- User account and OU management
-- Group Policy Object (GPO) creation and enforcement
-- PowerShell bulk user creation and account management
-- NTFS and share permissions with security groups
-
-**What I Learned:**
+What I Learned:
 How enterprise environments manage users, permissions, and security policies at scale — the core of what help desk and sysadmin roles deal with daily.
 
----
-### 3. Penetration Testing Lab (Kali Linux + Metasploitable 2)
-**Tools:** Kali Linux, Metasploit Framework, Nmap, Wireshark, VirtualBox
-
-**Overview:**
-Built a virtualized attack lab using Kali Linux and Metasploitable 2. Performed full reconnaissance workflow including port scanning, service enumeration, and OS fingerprinting with Nmap. Exploited a known CVE backdoor vulnerability (vsftpd 2.3.4) using Metasploit Framework to achieve a root shell, then extracted password hashes from /etc/shadow for offline cracking. Captured and analyzed network traffic using Wireshark identifying DNS, HTTP, and QUIC protocols.
-
-**Key Skills Demonstrated:**
-- Network reconnaissance and service enumeration
-- Vulnerability identification and exploitation
-- Metasploit Framework operation
-- Packet capture and protocol analysis
-- Post-exploitation techniques
-
-**What I Learned:**
-The full offensive security workflow from recon to exploitation — and how understanding attacks makes you a better defender.
-
----
-### 4. Network-Wide Ad Blocker & DNS Privacy Solution (Pi-hole)
-**Tools:** Raspberry Pi 5, Pi-hole, Linux CLI, DNS/DHCP
-
-**Overview:**
-Deployed and configured Pi-hole DNS server on a Raspberry Pi 5, blocking ads and trackers at the network level for all connected devices. Achieved a 30-70% query block rate across 5-15 active clients. Handled static IP reservation, upstream DNS configuration using Quad9, Wi-Fi interface troubleshooting, and service management via Linux CLI.
-
-**Key Skills Demonstrated:**
-- Linux server deployment and configuration
-- DNS and DHCP fundamentals
-- Network-level security hardening
-- Raspberry Pi administration
-- Service monitoring and management
-
-**What I Learned:**
-How DNS works at a practical level and how network-wide filtering can be implemented as a security control on any network.
-
----
-### 5. WireGuard VPN Server
-**Tools:** Raspberry Pi 5, WireGuard, Linux CLI, UFW Firewall
-
-**Overview:**
-Self-hosted a WireGuard VPN server on a Raspberry Pi 5 to encrypt home network traffic and practice secure remote access. Managed key generation, peer configuration, and firewall rules in a Linux environment.
-
-**Key Skills Demonstrated:**
-- VPN server deployment and configuration
-- Public/private key cryptography concepts
-- Linux firewall rule management
-- Secure remote access implementation
-- Network traffic encryption
-
-**What I Learned:**
-How VPNs work at a technical level including key exchange, tunneling, and how to secure remote connections — directly relevant to enterprise remote access solutions.
-
----
-6. Vulnerability Scanning Lab (OpenVAS/Greenbone)
-Tools: Greenbone Vulnerability Manager (OpenVAS), Kali Linux, Metasploitable 2, VirtualBox
+2. SIEM Monitoring Lab (Splunk Enterprise) — Multi-Source
+Tools: Splunk Enterprise, Windows Server 2022, Kali Linux, Metasploitable 2, SPL
 Overview:
-Deployed Greenbone Vulnerability Manager (GVM) on Kali Linux and configured it to perform a full vulnerability scan against a Metasploitable 2 target in an isolated virtual network. Analyzed scan results by severity, identified critical CVEs, and cross-referenced findings with exploits previously executed manually using Metasploit Framework.
+Deployed Splunk Enterprise on Windows Server 2022 and configured it to ingest logs from 4 sources: Windows Security, Application, and System event logs, plus Linux syslog from Metasploitable 2. Built a multi-source SOC monitoring dashboard with panels for log volume, failed login detection, Linux host activity, and top security events. Created automated alerts for brute force and web enumeration attacks.
+Key Skills Demonstrated:
+
+SIEM deployment and multi-source log ingestion
+Windows Event Log and Linux syslog forwarding (UDP 514)
+SPL query writing — stats, timechart, where, search
+Automated alert creation (brute force: 3+ failed logins, web enumeration: 3+ 404s)
+Multi-panel SOC dashboard creation
+Cross-platform event correlation
+
+What I Learned:
+How real SOC teams monitor multiple log sources simultaneously and how SIEM tools correlate events across platforms to surface threats automatically.
+
+3. Vulnerability Scanning Lab (OpenVAS/Greenbone)
+Tools: Greenbone Vulnerability Manager (GVM/OpenVAS), Kali Linux, Metasploitable 2, VirtualBox
+Overview:
+Deployed Greenbone Vulnerability Manager on Kali Linux and ran a Full and Fast vulnerability scan against Metasploitable 2 in an isolated virtual network. Analyzed 62 findings by CVSS severity and cross-referenced all critical CVEs with successful Metasploit exploits.
+Key Findings:
+
+14 Critical | 9 High | 39 Medium | 4 Low (Max CVSS: 10.0)
+Critical CVEs: vsftpd 2.3.4, Samba usermap_script, distcc daemon, UnrealIRCd backdoor
+
 Key Skills Demonstrated:
 
 Vulnerability scanner deployment and configuration
-Network target setup and host-only adapter configuration
-Full and Fast scan execution against a live target
+Full and Fast scan execution against live target
 CVE identification and CVSS severity triage
-Correlating scanner findings with known exploits (vsftpd 2.3.4, Samba, distcc, UnrealIRCd)
+Correlating scanner findings with manual exploitation results
 Report generation and documentation
 
 What I Learned:
-How vulnerability scanners surface attack surface the way a real SOC or pen test team would — and how findings like vsftpd 2.3.4 map directly to exploits I've already executed, completing the full scan → identify → exploit kill chain.
----
-3. End-to-End Attack & Detection Lab (Capstone)
-Tools: Kali Linux, Metasploit Framework, Metasploitable 2, Greenbone OpenVAS, Splunk Enterprise, Windows Server 2022, VirtualBox
+How vulnerability scanners surface attack surface the way a real SOC or pen test team would — and how scanner findings map directly to exploitable CVEs.
+
+4. End-to-End Attack & Detection Lab (Capstone)
+Tools: Kali Linux, Metasploit Framework, Metasploitable 2, OpenVAS, Splunk Enterprise, Apache, Wireshark, Windows Server 2022, VirtualBox
 Overview:
-Built a three-VM home lab simulating a real-world attack and detection scenario. Used OpenVAS to identify critical vulnerabilities on a target system, exploited them using Metasploit, and detected the attack in real time using Splunk SIEM ingesting syslog data from the compromised host.
+Built a three-VM lab simulating a complete enterprise attack and SOC detection scenario. Exploited four critical vulnerabilities identified by OpenVAS, detected attacks in Splunk SIEM in real time, deployed a web server and forwarded access logs to the SIEM, created web attack detection alerts, and analyzed all traffic using Wireshark.
 Lab Architecture:
 
 Attacker: Kali Linux (192.168.56.105)
@@ -118,20 +70,61 @@ Defender/SOC: Windows Server 2022 + Splunk (192.168.56.104)
 
 Attack Chain:
 
-Ran OpenVAS Full and Fast scan against Metasploitable 2 — identified vsftpd 2.3.4 backdoor (CVSS 10.0 Critical)
-Exploited vsftpd 2.3.4 backdoor using Metasploit Framework, achieving a root shell (uid=0)
-Dumped /etc/passwd confirming full system compromise
-Configured Metasploitable 2 syslog forwarding to Splunk via UDP 514
-Detected attack activity in Splunk showing source host, timestamp, and attack signature
+Ran OpenVAS Full and Fast scan — identified 4 critical CVEs
+Exploited vsftpd 2.3.4 backdoor → root shell (uid=0)
+Exploited Samba usermap_script → root shell
+Exploited distcc daemon → daemon shell
+Exploited UnrealIRCd backdoor → root shell
+Configured syslog forwarding from Metasploitable 2 to Splunk
+Deployed Apache web server on Kali; forwarded access logs to Splunk
+Created SPL alert for web enumeration (multiple 404s from single host)
+Analyzed all attack traffic in Wireshark — TCP flags, port scan signatures, backdoor connections on port 6200
 
 Key Skills Demonstrated:
 
-Vulnerability scanning and CVE triage (OpenVAS/Greenbone)
-Exploitation using Metasploit Framework
-SIEM log ingestion and syslog forwarding configuration
-Real-time attack detection in Splunk
-Network segmentation using host-only adapters across multiple VMs
+Multi-vector exploitation using Metasploit Framework
+SIEM log ingestion and real-time attack detection
+Apache web server deployment and log management
+SPL-based web attack detection rule writing
+Wireshark packet analysis — ICMP, HTTP, TCP handshake, SYN scan identification
 Full attack lifecycle: reconnaissance → exploitation → detection → documentation
 
 What I Learned:
-How a SOC analyst sees an attack in progress — from the initial vulnerability scan that surfaces the threat, through active exploitation, to the log events that appear in a SIEM. This lab demonstrates both offensive and defensive perspectives of the same attack, which is the foundation of effective threat detection.
+How a SOC analyst sees an attack in progress — and how understanding the attacker's perspective makes you a better defender. This lab demonstrates both offensive and defensive security skills in a single end-to-end exercise.
+
+5. Network-Wide Ad Blocker & DNS Privacy Solution (Pi-hole)
+Tools: Raspberry Pi 5, Pi-hole, Linux CLI, DNS/DHCP
+Overview:
+Deployed Pi-hole DNS server on a Raspberry Pi 5, blocking ads and trackers at the network level for all connected devices. Achieved a 30-70% query block rate. Handled static IP reservation, upstream DNS configuration using Quad9, and service management via Linux CLI.
+Key Skills Demonstrated:
+
+Linux server deployment and configuration
+DNS and DHCP fundamentals
+Network-level security hardening
+Raspberry Pi administration
+Service monitoring and management
+
+
+6. WireGuard VPN Server
+Tools: Raspberry Pi 5, WireGuard, Linux CLI, UFW Firewall
+Overview:
+Self-hosted a WireGuard VPN server on a Raspberry Pi 5 to encrypt home network traffic and practice secure remote access. Managed key generation, peer configuration, and firewall rules in a Linux environment.
+Key Skills Demonstrated:
+
+VPN server deployment and configuration
+Public/private key cryptography concepts
+Linux firewall rule management
+Secure remote access implementation
+Network traffic encryption
+
+
+Tools & Technologies
+CategoryToolsSIEMSplunk Enterprise, SPLVulnerability ScanningGreenbone/OpenVAS, NmapExploitationMetasploit FrameworkPacket AnalysisWiresharkIdentity & AccessActive Directory, Group Policy, PowerShellWeb ServerApacheTicketingJiraOSKali Linux, Windows Server 2022, Ubuntu, Metasploitable 2VirtualizationVirtualBoxScriptingBash, PowerShellHome Lab InfraRaspberry Pi 5 (Pi-hole, WireGuard)
+
+Certifications & Training
+
+TryHackMe Pre Security Certificate
+TryHackMe SEC0 path — passed
+TryHackMe Cyber Security 101 — in progress (68%)
+CompTIA Security+ (SY0-701) — exam scheduled Summer 2026
+LACC Cybersecurity A.S. — GPA 3.7- expecteded graduation spring 2027
