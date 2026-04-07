@@ -12,5 +12,8 @@ Started with an OpenVAS vulnerability scan to identify targets, then exploited f
 ## What I Learned
 Seeing the attack from both sides changed how I think about detection. Knowing exactly what the exploit traffic looks like made writing the Splunk alert way more intuitive.
 
-## Screenshots
-*Coming soon*
+![Wireshark Capture](capstone2.png)
+*Live packet capture showing TCP and HTTP traffic between attacker (192.168.56.102) and victim (192.168.56.103)*
+
+![Metasploit Root Shell](capstone1.png)
+*vsftpd 2.3.4 backdoor exploited via Metasploit — root shell obtained (uid=0)*
