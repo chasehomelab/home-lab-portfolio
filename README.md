@@ -1,6 +1,9 @@
-Home Lab Portfolio
-Chase Marshall | Cybersecurity Student | U.S. Air Force Veteran
-LACC Cybersecurity A.S. (GPA 3.7) | CompTIA Security+ Candidate | Targeting SOC Analyst / IT Support Roles
+# Home Lab Portfolio
+
+### Chase Marshall | Cybersecurity Student | U.S. Air Force Veteran
+**LACC Cybersecurity A.S. (GPA 3.7) | CompTIA Security+ Candidate | Targeting SOC Analyst / IT Support Roles**
+
+---
 
 ## Projects
 
@@ -13,7 +16,7 @@ LACC Cybersecurity A.S. (GPA 3.7) | CompTIA Security+ Candidate | Targeting SOC 
 | 5 | [Pi-hole DNS Server](labs/05-pihole-dns/README.md) | Raspberry Pi 5, Pi-hole, Docker, Linux | 2025 |
 | 6 | [WireGuard VPN Server](labs/06-wireguard-vpn/README.md) | Raspberry Pi 5, WireGuard, UFW, Linux | 2025 |
 
-
+---
 
 ## Tools & Technologies
 
@@ -24,16 +27,16 @@ LACC Cybersecurity A.S. (GPA 3.7) | CompTIA Security+ Candidate | Targeting SOC 
 | Exploitation | Metasploit Framework |
 | Packet Analysis | Wireshark |
 | Identity & Access | Active Directory, Group Policy, PowerShell |
-| Web Server | Apache |
-| Ticketing | Jira |
 | OS | Kali Linux, Windows Server 2022, Ubuntu, Metasploitable 2 |
 | Virtualization | VirtualBox |
 | Scripting | Bash, PowerShell |
 | Home Lab Infra | Raspberry Pi 5 (Pi-hole, WireGuard) |
 
-Certifications & Training
+---
 
-TryHackMe SEC0 path — passed |
-TryHackMe Cyber Security 101 — Complete |
-CompTIA Security+ (SY0-701) — exam scheduled Summer 2026 |
-LACC Cybersecurity A.S. — GPA 3.7- expecteded graduation spring 2027 |
+## Certifications & Training
+
+- TryHackMe SEC0 — Passed
+- TryHackMe Cyber Security 101 — Complete
+- CompTIA Security+ (SY0-701) — In progress, exam scheduled Summer 2026
+- LACC Cybersecurity A.S. — GPA 3.7, Expected 2026
