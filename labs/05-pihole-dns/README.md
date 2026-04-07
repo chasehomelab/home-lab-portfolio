@@ -13,4 +13,6 @@ Configured a static IP for the Pi, set it as the primary DNS server on the route
 This was my first real exposure to how DNS actually works in practice. Watching query logs in real time showed me how much background traffic devices generate and how DNS-layer blocking works as a lightweight but effective security control.
 
 ## Screenshots
-*Coming soon*
+
+![Pi-hole Dashboard](pihole-dashboard.png)
+*72.7% of DNS queries blocked across all network devices*
