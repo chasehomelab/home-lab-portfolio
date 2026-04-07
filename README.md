@@ -15,6 +15,7 @@ LACC Cybersecurity A.S. (GPA 3.7) | CompTIA Security+ Candidate | Targeting SOC 
 
 
 Tools & Technologies
+
 CategoryToolsSIEMSplunk Enterprise, SPLVulnerability ScanningGreenbone/OpenVAS, NmapExploitationMetasploit FrameworkPacket AnalysisWiresharkIdentity & AccessActive Directory, Group Policy, PowerShellWeb ServerApacheTicketingJiraOSKali Linux, Windows Server 2022, Ubuntu, Metasploitable 2VirtualizationVirtualBoxScriptingBash, PowerShellHome Lab InfraRaspberry Pi 5 (Pi-hole, WireGuard)
 
 Certifications & Training
