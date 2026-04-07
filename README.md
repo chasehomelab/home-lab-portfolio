@@ -14,7 +14,6 @@ LACC Cybersecurity A.S. (GPA 3.7) | CompTIA Security+ Candidate | Targeting SOC 
 | 6 | [WireGuard VPN Server](labs/06-wireguard-vpn/README.md) | Raspberry Pi 5, WireGuard, UFW, Linux | 2025 |
 
 
-Tools & Technologies
 
 ## Tools & Technologies
 
