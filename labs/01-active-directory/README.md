@@ -13,4 +13,9 @@ Handled the full user lifecycle — provisioning, password resets, and offboardi
 This lab gave me a real feel for what help desk and sysadmin work actually looks like day to day. Most support tickets in an enterprise environment touch AD in some way — understanding the backend makes troubleshooting significantly faster.
 
 ## Screenshots
-*Coming soon*
+
+![Active Directory Users and Computers](ADL1.png)
+*IT Department OU with user accounts managed under lab.local domain*
+
+![Group Policy Management](ADL2.png)
+*Group Policy Management console showing Default Domain Policy and custom IT Policy linked to IT Department OU*
