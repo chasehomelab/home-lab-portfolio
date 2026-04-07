@@ -13,4 +13,9 @@ Set up log forwarding from both Windows and Linux hosts, wrote SPL queries to su
 This lab made SIEM work feel real. Writing a detection rule is one thing — watching it fire on traffic you generated yourself is different. It also showed me how much context you lose when you're only monitoring one log source.
 
 ## Screenshots
-*Coming soon*
+
+![SOC Monitoring Dashboard](splunk2.png)
+*Multi-source SOC monitoring dashboard ingesting Windows Security, System, and Application event logs*
+
+![Failed Login Attempts & Security Events](splunk1.png)
+*Failed login detection by account with Top Windows Security Events panel showing Event IDs 4624, 4672, 4634*
