@@ -14,5 +14,5 @@ This was my first real exposure to how DNS actually works in practice. Watching 
 
 ## Screenshots
 
-![Pi-hole Dashboard](pihole-dashboard.png)
+![Pi-hole Dashboard](pi_hole.png)
 *72.7% of DNS queries blocked across all network devices*
