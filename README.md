@@ -16,7 +16,21 @@ LACC Cybersecurity A.S. (GPA 3.7) | CompTIA Security+ Candidate | Targeting SOC 
 
 Tools & Technologies
 
-CategoryToolsSIEMSplunk Enterprise, SPLVulnerability ScanningGreenbone/OpenVAS, NmapExploitationMetasploit FrameworkPacket AnalysisWiresharkIdentity & AccessActive Directory, Group Policy, PowerShellWeb ServerApacheTicketingJiraOSKali Linux, Windows Server 2022, Ubuntu, Metasploitable 2VirtualizationVirtualBoxScriptingBash, PowerShellHome Lab InfraRaspberry Pi 5 (Pi-hole, WireGuard)
+## Tools & Technologies
+
+| Category | Tools |
+|----------|-------|
+| SIEM | Splunk Enterprise, SPL |
+| Vulnerability Scanning | Greenbone/OpenVAS, Nmap |
+| Exploitation | Metasploit Framework |
+| Packet Analysis | Wireshark |
+| Identity & Access | Active Directory, Group Policy, PowerShell |
+| Web Server | Apache |
+| Ticketing | Jira |
+| OS | Kali Linux, Windows Server 2022, Ubuntu, Metasploitable 2 |
+| Virtualization | VirtualBox |
+| Scripting | Bash, PowerShell |
+| Home Lab Infra | Raspberry Pi 5 (Pi-hole, WireGuard) |
 
 Certifications & Training
 
