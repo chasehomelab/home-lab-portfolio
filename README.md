@@ -34,8 +34,8 @@ Tools & Technologies
 
 Certifications & Training
 
-TryHackMe Pre Security Certificate
-TryHackMe SEC0 path — passed
-TryHackMe Cyber Security 101 — Complete
-CompTIA Security+ (SY0-701) — exam scheduled Summer 2026
-LACC Cybersecurity A.S. — GPA 3.7- expecteded graduation spring 2027
+TryHackMe Pre Security Certificate |
+TryHackMe SEC0 path — passed |
+TryHackMe Cyber Security 101 — Complete |
+CompTIA Security+ (SY0-701) — exam scheduled Summer 2026 |
+LACC Cybersecurity A.S. — GPA 3.7- expecteded graduation spring 2027 |
