@@ -1,2 +1,2 @@
 /
-# Packet Tracer Labs
+LabConceptsVLAN Segmentation & ACLsVLANs, trunking, inter-VLAN routing, DHCP, DNS, ACLsDMZ ArchitectureZone separation, web server exposure, ACL enforcementLayer 2 SecurityPort security, DHCP snooping, Dynamic ARP InspectionSite-to-Site IPSec VPNIPSec, ISAKMP, crypto maps, tunnel configurationOSPF Dynamic RoutingOSPF neighbor adjacency, dynamic route advertisementNAT/PAT SimulationAddress translation, inside/outside NAT, PAT overload
