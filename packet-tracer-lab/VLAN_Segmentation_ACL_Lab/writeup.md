@@ -14,7 +14,7 @@ Design and implement a segmented office network that enforces least privilege ac
 
 ## Topology
 
-![Topology](VLAN1.png)
+![Topology](VLAN8.png)
 
 | Device | Role | VLAN |
 |--------|------|------|
