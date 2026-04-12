@@ -70,31 +70,31 @@ Design and implement a segmented office network that enforces least privilege ac
 ## Screenshots
 
 ### Full Topology
-![Topology](VLAN1.png)
+![Topology](VLAN8.png)
 
 ### VLAN Configuration — Multilayer Switch0
-![Multilayer Switch show vlan brief and show ip interface brief](VLAN2.png)
+![Multilayer Switch show vlan brief and ip interface brief](VLAN7.png)
 
 ### VLAN Configuration — Switch1 (IT)
-![Switch1 show vlan brief](VLAN3.png)
+![Switch1 show vlan brief](VLAN9.png)
 
 ### DHCP — PC0 Auto-Assigned IP in VLAN 10
-![PC0 DHCP IP Configuration](VLAN4.png)
+![PC0 DHCP IP Configuration](VLAN1.png)
 
 ### ACL — BLOCK_GUEST with Match Counts
-![show ip access-lists](VLAN5.png)
+![show ip access-lists](VLAN2.png)
 
 ### Test — PC0 (IT) Pinging Across VLANs (Success)
 ![PC0 inter-VLAN ping success](VLAN6.png)
 
 ### Test — PC2 (Guest) Blocked by ACL
-![PC2 ping blocked](VLAN7.png)
+![PC2 ping blocked](VLAN3.png)
 
 ### Server0 DNS — Service On with A Record
-![Server0 DNS configuration](VLAN8.png)
+![Server0 DNS configuration](VLAN5.png)
 
 ### Test — PC1 Resolving intranet.local via DNS
-![PC1 DNS resolution](VLAN9.png)
+![PC1 DNS resolution](VLAN4.png)
 
 ---
 
