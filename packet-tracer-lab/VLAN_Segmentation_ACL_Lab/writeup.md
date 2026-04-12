@@ -1,38 +1,124 @@
 # VLAN Segmentation & ACL Lab
 
-**Tools:** Cisco Packet Tracer, IOS CLI  
-**Date:** April 2026
+**Tools:** Cisco Packet Tracer, Cisco IOS CLI, Multilayer Switch (3560-24PS), 2960 Access Switches  
+**Date:** April 2026  
+**File:** VLAN_Segmentation_ACL_Lab.pkt
+
+---
 
 ## Objective
-Build a segmented office network with VLANs, inter-VLAN routing, DHCP, DNS, and ACLs enforcing least privilege between departments.
+
+Design and implement a segmented office network that enforces least privilege access control between departments using VLANs, inter-VLAN routing, DHCP, DNS, and extended ACLs. This lab simulates how enterprise networks isolate departments to reduce lateral movement risk — a core concept in network security and SOC operations.
+
+---
 
 ## Topology
-*(screenshot)*
+
+![Topology](VLAN1.png)
+
+| Device | Role | VLAN |
+|--------|------|------|
+| Multilayer Switch0 | Core L3 Switch / DHCP Server | All |
+| Switch1 | IT Access Switch | VLAN 10 |
+| Switch0 | HR Access Switch | VLAN 20 |
+| Switch2 | Guest Access Switch | VLAN 30 |
+| PC0 | IT Workstation | VLAN 10 |
+| PC1 | HR Workstation | VLAN 20 |
+| PC2 | Guest Device | VLAN 30 |
+| Server0 | Internal DNS/DHCP Server | VLAN 20 |
+
+---
 
 ## IP Plan
-| Segment | VLAN | Network | Gateway |
-|---------|------|---------|---------|
-| IT | 10 | 192.168.10.0/24 | 192.168.10.1 |
-| HR | 20 | 192.168.20.0/24 | 192.168.20.1 |
-| Guest | 30 | 192.168.30.0/24 | 192.168.30.1 |
+
+| Segment | VLAN | Network | Gateway | DHCP Range |
+|---------|------|---------|---------|------------|
+| IT | 10 | 192.168.10.0/24 | 192.168.10.1 | .100–.150 |
+| HR | 20 | 192.168.20.0/24 | 192.168.20.1 | .100–.150 |
+| Guest | 30 | 192.168.30.0/24 | 192.168.30.1 | .100–.150 |
+
+---
 
 ## What I Configured
-- VLANs 10, 20, 30 on all switches with trunk links
-- Inter-VLAN routing via SVIs on Multilayer Switch
-- DHCP pools per VLAN with automatic IP assignment
-- DNS server with intranet.local A record
-- Extended ACL blocking Guest from IT and HR subnets
 
-## Test Results
-- PC0 (IT) → ping 192.168.20.1 ✅ success
-- PC2 (Guest) → ping 192.168.10.1 ❌ blocked by ACL
-- PC1 (HR) → ping intranet.local ✅ resolved to 192.168.20.100
+**VLANs & Trunking**
+- Created VLANs 10 (IT), 20 (HR), and 30 (Guest) on all switches
+- Configured trunk links between Multilayer Switch0 and all three access switches using 802.1Q encapsulation
+- Assigned access ports on each switch to the correct VLAN
 
-## Security Concepts Demonstrated
-- Network segmentation
-- Least privilege access control
-- Defense in depth
-- DNS and DHCP infrastructure services
+**Inter-VLAN Routing**
+- Enabled `ip routing` on Multilayer Switch0
+- Created Switched Virtual Interfaces (SVIs) for each VLAN as default gateways
+
+**DHCP**
+- Configured three DHCP pools on Multilayer Switch0, one per VLAN
+- Excluded .1–.99 from each pool to reserve addresses for infrastructure
+- Verified automatic IP assignment on all three PCs
+
+**DNS**
+- Configured Server0 with static IP 192.168.20.100
+- Enabled DNS service and created A record: `intranet.local → 192.168.20.100`
+- Verified hostname resolution from PC1
+
+**ACL — Guest Isolation**
+- Created extended ACL `BLOCK_GUEST` denying Guest subnet access to IT and HR subnets
+- Applied ACL inbound on VLAN 30 SVI
+- Permitted all other traffic with implicit `permit ip any any`
+
+---
 
 ## Screenshots
-*(add screenshots here)*
+
+### Full Topology
+![Topology](VLAN1.png)
+
+### VLAN Configuration — Multilayer Switch0
+![Multilayer Switch show vlan brief and show ip interface brief](VLAN2.png)
+
+### VLAN Configuration — Switch1 (IT)
+![Switch1 show vlan brief](VLAN3.png)
+
+### DHCP — PC0 Auto-Assigned IP in VLAN 10
+![PC0 DHCP IP Configuration](VLAN4.png)
+
+### ACL — BLOCK_GUEST with Match Counts
+![show ip access-lists](VLAN5.png)
+
+### Test — PC0 (IT) Pinging Across VLANs (Success)
+![PC0 inter-VLAN ping success](VLAN6.png)
+
+### Test — PC2 (Guest) Blocked by ACL
+![PC2 ping blocked](VLAN7.png)
+
+### Server0 DNS — Service On with A Record
+![Server0 DNS configuration](VLAN8.png)
+
+### Test — PC1 Resolving intranet.local via DNS
+![PC1 DNS resolution](VLAN9.png)
+
+---
+
+## Test Results
+
+| Test | Result |
+|------|--------|
+| PC0 (IT) → ping 192.168.20.1 (HR gateway) | ✅ Success |
+| PC0 (IT) → ping 192.168.30.1 (Guest gateway) | ✅ Success |
+| PC2 (Guest) → ping 192.168.10.1 (IT gateway) | ❌ Blocked by ACL |
+| PC2 (Guest) → ping 192.168.20.1 (HR gateway) | ❌ Blocked by ACL |
+| PC1 (HR) → ping intranet.local | ✅ Resolved to 192.168.20.100 |
+| All PCs → DHCP address assignment | ✅ Correct subnet per VLAN |
+
+---
+
+## Security Concepts Demonstrated
+
+- **Network segmentation** — VLANs enforce logical separation between departments
+- **Least privilege** — Guest users blocked from accessing IT and HR resources
+- **Defense in depth** — ACLs applied at the Layer 3 boundary, not just the edge
+- **DNS infrastructure** — Internal hostname resolution simulating enterprise DNS
+- **DHCP scoping** — Automatic address assignment scoped per security zone
+
+---
+
+## Key Commands Used
